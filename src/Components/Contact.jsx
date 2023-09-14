@@ -7,10 +7,15 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-    setName("");
-    setEmail("");
-    setMessage("");
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill all the Fields");
+    } else {
+      alert("Thank you for Subscribing Newslleter.");
+      setName("");
+      setEmail("");
+      setMessage("");
+
+    }
   };
 
   return (
@@ -21,7 +26,7 @@ export default function Contact() {
             style={{
               fontWeight: "600",
               fontSize: "26px",
-              marginBottom: "15px"
+              marginBottom: "15px",
             }}
           >
             Newslleter
@@ -31,7 +36,7 @@ export default function Contact() {
         <div
           style={{
             flex: "1",
-            padding: "10px"
+            padding: "10px",
           }}
         >
           <form className="contact_form">
